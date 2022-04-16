@@ -21,4 +21,5 @@ int main( void )
         printf( "%d %d\n", ( int )( A[ 0 ] / r ), ( int )( A[ 2 ] * r ) );
     }
     return 0;
+    // test git
 }
