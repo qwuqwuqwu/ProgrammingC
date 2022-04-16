@@ -1,1 +1,4 @@
 /.DS_Store
+*.dSYM
+output.txt
+*.out
