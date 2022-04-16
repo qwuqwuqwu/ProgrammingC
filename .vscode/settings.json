@@ -1,0 +1,15 @@
+{
+    "files.associations": {
+        "HelloC.C": "cpp",
+        "chrono": "c",
+        "cmath": "c",
+        "complex": "c",
+        "cstdlib": "c",
+        "random": "c",
+        "*.tcc": "c",
+        "numeric": "c",
+        "ratio": "c",
+        "cinttypes": "c"
+    },
+    "C_Cpp.errorSquiggles": "Disabled"
+}
