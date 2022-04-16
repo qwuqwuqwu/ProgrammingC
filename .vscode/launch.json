@@ -17,7 +17,7 @@
             "preLaunchTask": "MyBuild",
             "setupCommands": [
                 {
-                    "text": "settings set target.input-path ${fileDirname}/input25.txt"
+                    "text": "settings set target.input-path ${fileDirname}/inputE09_01.txt"
                 },
                 {
                     "text": "settings set target.output-path ${fileDirname}/output.txt"
