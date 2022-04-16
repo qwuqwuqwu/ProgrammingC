@@ -3,34 +3,39 @@
 #define MAXN 1000000
 
 int A[MAXN], buffer[MAXN];
-void merge(int starta, int lena, int startb, int lenb){
-  int i = 0, j = 0, k = 0;
-  while(i < lena && j < lenb) {
-    if(A[starta+i] < A[startb+j]) {
-      buffer[k++] = A[starta + i++];
-    } else {
-      buffer[k++] = A[startb + j++];
+void merge(int starta, int lena, int startb, int lenb)
+// merge A[starta], A[startb] into buffer
+{
+    int i = 0, j = 0, k = 0;
+    while( i < lena && j < lenb ) {
+        if( A[ starta + i ] < A[ startb + j ] ) {
+            buffer[ k++ ] = A[ starta + i++ ];
+        }
+        else {
+            buffer[ k++ ] = A[ startb + j++ ];
+        }
     }
-  }
-  while(i < lena) {
-    buffer[k++] = A[starta + i++];
-  }
-  while(j < lenb) {
-    buffer[k++] = A[startb + j++];
-  }
+    while( i < lena ) {
+        buffer[ k++ ] = A[ starta + i++ ];
+    }
+    while( j < lenb ) {
+        buffer[ k++ ] = A[ startb + j++ ];
+    }
 }
 
 void merge_sort(int left, int right)
 {
-  int i, mid;
-  if (left >= right) return; 
-  mid = left + (right-left)/2;   
-  merge_sort(left, mid); // A[left...mid] is sorted
-  merge_sort(mid+1, right); // A[mid+1...right] is sorted
-  merge(left, mid-left+1, mid+1, right-mid); 
-  for(i=0; i < right-left+1; i++){  	
-    A[left+i] = buffer[i];
-  }
+    int i, mid;
+    if ( left >= right ) return; 
+    mid = left + ( right - left ) / 2;   
+    merge_sort( left, mid ); // A[left...mid] is sorted
+    merge_sort( mid + 1, right ); // A[mid+1...right] is sorted
+
+    merge( left, mid - left + 1, mid + 1, right - mid ); 
+    // copy back buffer to A
+    for( i = 0; i < right - left + 1; i++ ){  	
+        A[ left + i ] = buffer[ i ];
+    }
 }
 
 int main(){
