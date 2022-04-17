@@ -1,6 +1,7 @@
 // problem 23
 // too many watermelons
 
+// method: array to store old info
 #include <stdio.h>
 #include <stdbool.h>
 
@@ -24,6 +25,8 @@ int main( void )
     }
 
     for( int i = 0; i < nN; i++ ) {
+        // find g_B[ i ]
+
         nAdvanceCount = 1;
         // search in Buffer first
         if( g_Buffer[ g_B[ i ] ] == true ) {
@@ -34,6 +37,7 @@ int main( void )
                 printf( "0 " );
             }
         }
+        // not in the buffer, then it is still in A
         else {
             while( true ) {
                 if( nSearchIdx == nN ) {
@@ -50,7 +54,7 @@ int main( void )
                     }
                     break;
                 }
-                // not hit
+                // not hit, then store in buffer
                 else {
                     g_Buffer[ g_A[ nSearchIdx ] ] = true;
                     nSearchIdx++;

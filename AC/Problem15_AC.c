@@ -1,8 +1,9 @@
 // problem 15
 // Factor Counter
 
+// method: basic math, prefix table
+
 #include <stdio.h>
-//#include <stdlib.h>
 #include <math.h>
 
 #define MAX ( 20000 )

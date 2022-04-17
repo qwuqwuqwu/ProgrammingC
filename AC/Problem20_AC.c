@@ -1,4 +1,8 @@
+// problem 20
+// Do you know de way?
 #include <stdio.h>
+
+// method: basic math
 
 int main( void )
 {

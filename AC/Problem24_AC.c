@@ -1,5 +1,7 @@
 // problem 24
-//pD - Distrait
+// pD - Distrait
+
+// method: bruteforce check every elements
 
 #include <stdio.h>
 #include <stdbool.h>

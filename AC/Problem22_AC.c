@@ -1,3 +1,8 @@
+// problem 22
+// No, I don't know the way, but....
+
+// method: printf %.3f
+
 #include <stdio.h>
 
 int main( void )

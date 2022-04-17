@@ -1,6 +1,8 @@
 // problem 19
 // too many words
 
+// method: getchar
+
 #include <stdio.h>
 
 int main( void )

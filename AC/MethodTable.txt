@@ -3,4 +3,16 @@ Problem |   Method
 4       |   basic math, while loop
 8       |   character compare
 11      |   recursion
+12      |   prefix sum
+13      |   basic math
+15      |   basic math, prefix table
+16      |   printf %.*lf
+17      |   basic math
+18      |   get double by two int
+19      |   getchar
+20      |   basic math
+21      |   array to store old info
+22      |   printf %.3f
+23      |   array to store old info
+24      |   bruteforce check every elements
 28      |   count i + not count i

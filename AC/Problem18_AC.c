@@ -1,6 +1,8 @@
 // problem 18
 // Easy Palindrome
 
+// method: get double by two int
+
 #include <stdio.h>
 
 #define LEN ( 3 )

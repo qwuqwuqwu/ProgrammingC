@@ -1,6 +1,7 @@
 // problem 16
 // carrying hotpot
 
+// method: printf %.*lf
 
 #include <stdio.h>
 #include <math.h>
@@ -13,12 +14,13 @@ int main( void ) {
 
     scanf( "%lf%lf%d", &x, &y, &z );
 
-    double mul = x * y;
+    double mul = x * y; // XXX.OOOAAA
 
     Base = pow( 10.0, z );
-    mul *= Base;
-    mul = floor( mul );
-    mul /= Base;
+    mul *= Base; // XXXOOO.AAA
+    mul = floor( mul ); // XXXOOO
+    mul /= Base; // XXX.OOO
+
     printf( "%.*lf\n", z, mul );
     
     return 0;

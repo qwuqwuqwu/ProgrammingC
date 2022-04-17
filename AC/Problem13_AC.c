@@ -1,10 +1,11 @@
 // problem 13
 // Hexadecimal to Binary
 
+// method: basic math
+
 #include <stdio.h>
 
 #define MAX_LENOF_BITARRAY  ( 1000 )
-
 
 int main( void )
 {

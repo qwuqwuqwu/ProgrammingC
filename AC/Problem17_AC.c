@@ -1,6 +1,8 @@
 // problem 17
 // money money
 
+// method: basic math
+
 #include <stdio.h>
 
 int main( void )
