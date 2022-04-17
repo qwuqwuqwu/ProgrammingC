@@ -40,7 +40,7 @@
 			],
 			"group": {
 				"kind": "build",
-				"isDefault": true
+				"isDefault": false
 			},
 			"detail": "編譯器: /usr/bin/clang"
 		},
@@ -49,7 +49,11 @@
 			"dependsOn": [
 				"MAC ClangBuild",
 				"MAC delete output"
-			]
+			],
+			"group": {
+				"kind": "build",
+				"isDefault": true
+			}
 		},
 		{
 			"type": "cppbuild",
@@ -87,7 +91,7 @@
 			],
 			"group": {
 				"kind": "build",
-				"isDefault": true
+				"isDefault": false
 			},
 			"detail": "delete output.txt"
 		},
@@ -96,7 +100,11 @@
 			"dependsOn": [
 				"Windows GCCBuild",
 				"Windows delete output"
-			]
+			],
+			"group": {
+				"kind": "build",
+				"isDefault": true
+			}
 		}
 	]
 }
