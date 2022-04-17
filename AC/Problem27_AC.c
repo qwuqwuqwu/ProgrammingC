@@ -4,10 +4,20 @@
 #include <stdio.h>
 #include <stdbool.h>
 #include <stdlib.h>
-//#include <math.h>
 
 #define MAX_SIZEOF_POINTS   ( 100 )
 #define MAX_SIZEOF_SLOPES   ( MAX_SIZEOF_POINTS * ( MAX_SIZEOF_POINTS - 1 ) * ( MAX_SIZEOF_POINTS - 2 ) / 6 ) // C( MAX_SIZEOF_POINTS, 3 )
+
+// basic math
+// One line in ( x, y ) plane can be represented by this function
+// Ax + By + C = 0
+// assume two points ( x1, y1 ), ( x2, y2 ) are in this line, then
+// A( x2 - x1 ) + B( y2 - y1 ) = 0
+// DX = x2 - x1 ; DY = y2 - y1;
+// A DX + B DY = 0;
+// A = -B * DY / DX;
+// ( -B * DY / DX ) * x + B * y + C = 0
+// 
 
 struct Point {
     int nX;

@@ -1,5 +1,8 @@
 // problem 26
 // The Big Hammer Rise
+
+// method: get double by two int, printf %04d
+
 #include <stdio.h>
 
 int main( void )

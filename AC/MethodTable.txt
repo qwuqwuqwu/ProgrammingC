@@ -15,4 +15,7 @@ Problem |   Method
 22      |   printf %.3f
 23      |   array to store old info
 24      |   bruteforce check every elements
+25      |   GCD/LCM, first/then*
+26      |   get double by two int, printf %04d
 28      |   count i + not count i
+29      |   prefix sum

@@ -1,9 +1,13 @@
 // problem 25
 // pB - Birthday Party
 
+// method: GCD/LCM, first/then*
+
 #include <stdio.h>
 #include <stdbool.h>
 
+// becare of the gcd value range need to be longlong
+// test case 5 : 1~10^18
 long long gcd( long long lhs, long long rhs )
 {
     if( rhs == 0 ) {
@@ -14,7 +18,7 @@ long long gcd( long long lhs, long long rhs )
     }
 }
 
-int main ( void )
+int main( void )
 {
     int nT = 0;
     scanf( "%d", &nT );
@@ -44,7 +48,7 @@ int main ( void )
         nGCD = gcd( nX1, nX2 );
         nLCM = nX1 * ( nX2 / nGCD );
         // NOTICE!!!
-        // ( nX2 /nGCD ) divide first then multiply nX1 * ()
+        // ( nX2 / nGCD ) divide first then multiply nX1 * ()
         // because test data 5 consist of 10^18 input
         // if 10^18 * 10^18, out of long long range(2^31 - 1 about 10^18)
 
