@@ -1,6 +1,8 @@
 // problem 8
 // The number of occurrences
 
+// method: character compare
+
 #include <stdio.h>
 #include "string.h"
 #include <stdbool.h>
@@ -26,8 +28,11 @@ int main( void )
         int nCount = 0;
         bool bMatch = true;
 
+        // check each idx in B
         for( int j = 0; j < nLenB; j++ ) {
             bMatch = true;
+            
+            // check each character in A
             for( int k = 0; k < nLenA; k++ ) {
                 if( A[ k ] != B[ j + k ] ) {
                     bMatch = false;
@@ -39,6 +44,7 @@ int main( void )
             }
         }
 
+        // update max count in nN test case
         if( nCount > nMax ) {
             nMax = nCount;
         }

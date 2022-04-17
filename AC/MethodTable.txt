@@ -1,0 +1,6 @@
+Problem |   Method
+3       |   basic math
+4       |   basic math, while loop
+8       |   character compare
+11      |   recursion
+28      |   count i + not count i

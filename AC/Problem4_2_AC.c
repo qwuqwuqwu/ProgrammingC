@@ -1,3 +1,8 @@
+// problem 4
+// pE - Exquisite Substrings
+
+// method: basic math, while loop
+
 #include <stdio.h>
 #include <string.h>
 #include <stdbool.h>
@@ -5,7 +10,6 @@
 char g_cInput[ 2001 ] = "\0";
 int g_nLength = 0;
 
-// pE - Exquisite Substrings
 bool CheckLeftRight_Odd( const int nCenter, const int nArmLength )
 {
     if( ( nCenter + nArmLength ) > g_nLength || ( nCenter - nArmLength ) < 1 ) {

@@ -1,3 +1,8 @@
+// problem 12
+// Tired janitor
+
+// method: prefix sum
+
 #include <stdio.h>
 #include <string.h>
 #include <stdlib.h>
@@ -6,8 +11,6 @@ int g_nN;
 int g_nQ;
 long long *g_pnTrash;
 long long *g_pllSum;
-
-// Tired janitor
 
 void HandleInput( void )
 {
@@ -18,21 +21,31 @@ void HandleInput( void )
     g_pnTrash = malloc( sizeof( long long ) * ( g_nN + 1 ) );
     g_pllSum = malloc( sizeof( long long ) * ( g_nN + 1 ) );
 
+    // // trash part
+    // char string[ 256 ];
+    // for( int i = 1; i <= g_nN; i++ ) {
+    //     scanf( "%s", string ); //5(/`A`)/ 
+    //     size_t Length = strlen( string );
+
+    //     for( size_t j = 0; j < Length; j++ ) {
+    //         if( string[ j ] == '(' ) {
+    //             string[ j ] = '\0';
+    //             break;
+    //         }
+    //     }
+
+    //     g_pnTrash[ i ] = atoll( string );
+    //     scanf( "%s", string ); //~I__I
+    // }
+
     // trash part
     char string[ 256 ];
-    for( int i = 1; i <= g_nN; i++ ) {
-        scanf( "%s", string ); //5(/`A`)/ 
-        size_t Length =  strlen( string );
 
-        for( size_t j = 0; j < Length; j++ ) {
-            if( string[ j ] == '(' ) {
-                string[ j ] = '\0';
-                break;
-            }
-        }
+    for( int i = 1; i <= g_nN; i++ ) {
+        scanf( "%s(/`A`)/ ~I__I", string ); //5 
 
         g_pnTrash[ i ] = atoll( string );
-        scanf( "%s", string ); //~I__I
+        scanf( "%s", string ); //(/`A`)/ ~I__I // you still need to eat these garbage
     }
 
     // sum all

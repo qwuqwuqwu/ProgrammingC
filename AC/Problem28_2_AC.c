@@ -1,5 +1,12 @@
 // problem 28
 // johny johny
+// METHOD: count i + not count i
+
+// get total counts of a_i sum equals k
+
+// note that original method needs to create 2d table g_pTable[ nN ][ nK ]
+// but this method will exceed memory limit of OJ system
+// so I just use brute force method to count whether pick i or not repeatedly
 
 #include <stdio.h>
 #include <stdlib.h>

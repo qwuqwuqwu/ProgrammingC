@@ -1,5 +1,9 @@
 // problem 3
 // Progression
+// method: basic math
+
+// determine input array is arithematic progression or geometric progression
+// and output the fourth element
 
 #include <stdio.h>
 
@@ -21,5 +25,4 @@ int main( void )
         printf( "%d %d\n", ( int )( A[ 0 ] / r ), ( int )( A[ 2 ] * r ) );
     }
     return 0;
-    // test git
 }
