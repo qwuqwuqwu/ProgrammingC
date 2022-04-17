@@ -3,7 +3,7 @@
 	"tasks": [
 		{
 			"type": "cppbuild",
-			"label": "C/C++: clang 建置使用中檔案",
+			"label": "MAC ClangBuild",
 			"command": "/usr/bin/clang",
 			"args": [
 				"-fdiagnostics-color=always",
@@ -26,7 +26,7 @@
 		},
 		{
 			"type": "process",
-			"label": "delete output",
+			"label": "MAC delete output",
 			"command": "rm",
 			"args": [
 				"-rf",
@@ -45,10 +45,57 @@
 			"detail": "編譯器: /usr/bin/clang"
 		},
 		{
-			"label": "MyBuild",
+			"label": "MAC WholeBuild",
 			"dependsOn": [
-				"C/C++: clang 建置使用中檔案",
-				"delete output"
+				"MAC ClangBuild",
+				"MAC delete output"
+			]
+		},
+		{
+			"type": "cppbuild",
+			"label": "Windows GCCBuild",
+			"command": "C:/msys64/mingw64/bin/gcc.exe",
+			"args": [
+				"-fdiagnostics-color=always",
+				"-g",
+				"${file}",
+				"-o",
+				"${fileDirname}/${fileBasenameNoExtension}.out"
+			],
+			"options": {
+				"cwd": "${fileDirname}"
+			},
+			"problemMatcher": [
+				"$gcc"
+			],
+			"group": {
+				"kind": "build",
+				"isDefault": true
+			},
+			"detail": "編譯器: C:/msys64/mingw64/bin/gcc.exe"
+		},
+		{
+			"type": "process",
+			"label": "Windows delete output",
+			"command": "WindowsDeleteOutput.bat",
+			"args": [],
+			"options": {
+				"cwd": "${fileDirname}"
+			},
+			"problemMatcher": [
+				"$gcc"
+			],
+			"group": {
+				"kind": "build",
+				"isDefault": true
+			},
+			"detail": "delete output.txt"
+		},
+		{
+			"label": "Windows WholeBuild",
+			"dependsOn": [
+				"Windows GCCBuild",
+				"Windows delete output"
 			]
 		}
 	]
