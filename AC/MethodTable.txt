@@ -1,4 +1,5 @@
 Problem |   Method
+----------------------------------------------
 3       |   basic math
 4       |   basic math, while loop
 8       |   character compare
@@ -23,3 +24,13 @@ Problem |   Method
 32      |   GCD
 36      |   binary representation
 40      |   basic math
+42      |   basic math
+44      |   bruteforce
+51      |   basic math
+52      |   basic math, prefix sum
+55      |   basic math
+56      |   recursion
+58      |   sorting
+77      |   basic math, string operation
+------------------------------------------------
+bonus1  |   prefix sum

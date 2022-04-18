@@ -1,3 +1,8 @@
+// problem 51
+// Get the number
+
+// method: basic math
+
 #include <stdio.h>
 
 int main( void )

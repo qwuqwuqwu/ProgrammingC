@@ -1,6 +1,8 @@
 // problem 58
 // simple integer sorting
 
+// method: sorting
+
 #include <stdio.h>
 #include <string.h>
 
@@ -10,7 +12,13 @@ int g_nArray[ MAXSIZE ];
 
 void BubbleSort( int *pnArray, int nLength )
 {
+    // M1: max, M2: second max
+    // X    X   X   X   X   M1
+    // X    X   X   X   M2
+    // X    X   X   M3
+
     for( int i = nLength - 2; i >= 0; i-- ) {
+        // move the max to the end idx( i + 1 )
         for( int j = 0; j <= i; j++ ) {
             if( pnArray[ j ] > pnArray[ j + 1 ] ) {
                 int nTemp = pnArray[ j ];
@@ -20,6 +28,8 @@ void BubbleSort( int *pnArray, int nLength )
         }
     }
 }
+
+// try merge sort
 
 int main( void )
 {

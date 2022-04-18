@@ -1,5 +1,7 @@
 // problem 42
 // eat candies
+
+// method: basic math
 #include <stdio.h>
 
 #define MIN( a, b ) ( ( a ) < ( b ) ? ( a ) : ( b ) )
@@ -46,12 +48,18 @@ long long Algorithm( int nRGB[ 3 ] )
         nMiddleIdx = nIdxArray[ 0 ];
     }
     
-    //
+    // In [ max + middle ] keep [ min ] first to pair with Min
+    // the rest pair count is temp
     long long temp = ( nRGB[ nMaxIdx ] + nRGB[ nMiddleIdx ] - nRGB[ nMinIdx ] ) / 2;
+
+    // if middle count is less than temp, not enough [ middle ] to make "temp" pair
+    // so the max pair of [ max + middle ] is [ middle ]
     nCount = MIN( temp, nRGB[ nMiddleIdx ] );
-    nCount += nRGB[ nMinIdx ];
+
+    nCount += nRGB[ nMinIdx ]; // add kept [ min ] in first step
     //return MIN( ( nRGB[ nMaxIdx ] + nRGB[ nMiddleIdx ] - nRGB[ nMinIdx ] ) / 2, nRGB[ nMiddleIdx ] ) + nRGB[ nMinIdx ];
     return nCount;
+
     nCount = ( long long )nRGB[ nMinIdx ];
     if( nSpecialCase == 0 ) {
         // case normal: max - min

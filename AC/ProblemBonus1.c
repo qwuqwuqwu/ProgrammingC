@@ -1,3 +1,7 @@
+// bonus 1
+// HaSaKi~
+
+// method: prefix sum
 #include <stdio.h>
 #include "string.h"
 

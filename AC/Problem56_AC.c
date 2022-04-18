@@ -1,6 +1,8 @@
 // Problem 56
 // N queens problem
 
+// method: recursion
+
 #include <stdio.h>
 
 #define MAX ( 20 )
@@ -34,13 +36,13 @@ int main(void)
 int valid( int row, int col )
 {
 	int i;
-    // check last row
+    // check all rows before
 	for( i = 0; i <= row - 1; i++ ) {
         // q[ i ] == col => same col
         // row - i == col - q[ i ] => \
         // row - i == q[ i ] - col => /
 		if( q[ i ] == col || row - i == col - q[ i ] || row - i == q[ i ] - col ) {
-		  return 0;
+			return 0;
 		}
 	}
 	return 1;
@@ -50,13 +52,14 @@ void place( int row )
 {
 	int j;
 	if( row == g_nSize ) {
-		g_nCount++;
+		g_nCount++;	// end recursion
 	}
     else {
+		// try to place each col
 		for( j = 0; j < g_nSize; j++ ) {
 			if( valid( row, j ) ) {
 				q[ row ] = j;
-				place( row + 1 );
+				place( row + 1 ); // try next row
 			}
 		}
 	}

@@ -1,5 +1,7 @@
 // problem 55
 // Skate Shoes Sliding
+
+// method: basic math
 #include <stdio.h>
 
 int main( void )

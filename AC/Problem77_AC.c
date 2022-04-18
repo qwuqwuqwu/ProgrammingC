@@ -1,6 +1,8 @@
 // problem 77
 // Salary thief
 
+// method: basic math, string operation
+
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
@@ -17,40 +19,38 @@ int Do( const int nX )
     int nLeft = 0;
     int nTailLen = 0;
     char Temp[ LEN ];
-    int nL = strlen( g_cInput );
-    int nTempLen = nL;
+    int nL = strlen( g_cInput ); // nL is the string length calculated in "length part", nL may exceed MOD, but it will be mod.
+    int nTempLen = nL; // nTempLen is the string length calculated in "string part", the max of nTempLen is nX
+
     // nX cut times
     for( int i = 1; i <= nX; i++ ) {
-        // deal with length
-        nLeft = ( g_cInput[ i - 1 ] - '0' );
-        nAdd = ( ( ( nL - i ) % MOD ) * ( ( nLeft - 1 ) % MOD ) ) % MOD;
-        nL = ( nL + nAdd ) % MOD;
+        // length part
+        nLeft = ( g_cInput[ i - 1 ] - '0' ); // nL is multiply times
+        nAdd = ( ( ( nL - i ) % MOD ) * ( ( nLeft - 1 ) % MOD ) ) % MOD; // 
+        nL = ( nL + nAdd ) % MOD; // nAdd, nL is mod before, so we only need to do mod one time
 
         if( nL < 0 ) {
             nL += MOD;
         }
 
+        // string part
         // deal with string within nX
         if( nTempLen < nX && nLeft > 1 ) {
-            nTailLen = nTempLen - i;
-            //strncpy( Temp, &g_cInput[ i ], nTailLen );
+            nTailLen = nTempLen - i; // get tail len
+
             memcpy( Temp, &g_cInput[ i ], nTailLen * sizeof( char ) );
             Temp[ nTailLen ] = '\0';
 
+            // do the copy
             for( int j = 0; j < ( nLeft - 1 ); j++ ) {
-                // memcpy( &g_cInput[ nTempLen ], Temp, nTailLen * sizeof( char ) );
-                // nTempLen += nTailLen;
-                // if( nTempLen >= nX ) {
-                //     break;
-                // }
+                // exceed nX
                 if( nTempLen + nTailLen > nX ) {
-                    //strncpy( &g_cInput[ nTempLen ], Temp, nX - nTempLen );
                     memcpy( &g_cInput[ nTempLen ], Temp, ( nX - nTempLen ) * sizeof( char ) );
                     nTempLen = nX;
                     break;
                 }
+                // within nX
                 else {
-                    //strncpy( &g_cInput[ nTempLen ], Temp, nTailLen );
                     memcpy( &g_cInput[ nTempLen ], Temp, nTailLen * sizeof( char ) );
                     nTempLen += nTailLen;
                 }
