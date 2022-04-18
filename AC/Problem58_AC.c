@@ -30,6 +30,51 @@ void BubbleSort( int *pnArray, int nLength )
 }
 
 // try merge sort
+int g_nBuffer[ MAXSIZE ];
+
+void merge( int nA_Start, int nA_Len, int nB_Start, int nB_Len )
+// merge A, B into Buffer
+{
+    int idx_a = 0;
+    int idx_b = 0;
+    int idx_buffer = 0;
+    while( idx_a < nA_Len && idx_b < nB_Len ) {
+        // a is smaller
+        if( g_nArray[ nA_Start + idx_a ] < g_nArray[ nB_Start + idx_b ] ) {
+            g_nBuffer[ idx_buffer++ ] = g_nArray[ nA_Start + idx_a ];
+            idx_a++;
+        }
+        // b is smaller
+        else {
+            g_nBuffer[ idx_buffer++ ] = g_nArray[ nB_Start + idx_b ];
+            idx_b++;
+        }
+    }
+
+    while( idx_a < nA_Len ) {
+        g_nBuffer[ idx_buffer++ ] = g_nArray[ nA_Start + idx_a ];
+        idx_a++;
+    }
+
+    while( idx_b < nB_Len ) {
+        g_nBuffer[ idx_buffer++ ] = g_nArray[ nB_Start + idx_b ];
+        idx_b++;
+    }
+}
+
+void MergeSort( int nStartIdx, int nLen )
+{
+    if( nLen == 1 ) {
+        return;
+    }
+    // Merge sort two sub array
+    int nHalfLen = nLen / 2;
+    MergeSort( nStartIdx, nHalfLen );
+    MergeSort( nStartIdx + nHalfLen, nLen - nHalfLen );
+    merge( nStartIdx, nHalfLen, nStartIdx + nHalfLen, nLen - nHalfLen );
+    // copy buffer back to array
+    memcpy( &g_nArray[ nStartIdx ], g_nBuffer, sizeof( int ) * nLen );
+}
 
 int main( void )
 {
@@ -47,6 +92,7 @@ int main( void )
         // sorting
         // simple bubble sort
         BubbleSort( g_nArray, nN );
+        //MergeSort( 0, nN );
 
         int j = 0;
         for( j = 0; j < nN - 1; j++ ) {
