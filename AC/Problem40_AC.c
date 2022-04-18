@@ -1,8 +1,8 @@
-#include <stdio.h>
-
 // problem 40
 // the three number
 
+// method: basic math
+#include <stdio.h>
 int main( void )
 {
     int a;

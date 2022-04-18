@@ -1,6 +1,8 @@
 // problem 32
 // HA HA HA
 
+// method: GCD
+
 #include <stdio.h>
 
 #define MAX_SIZEOF_ARRAY    ( 10001 )

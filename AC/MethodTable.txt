@@ -19,3 +19,7 @@ Problem |   Method
 26      |   get double by two int, printf %04d
 28      |   count i + not count i
 29      |   prefix sum
+30      |   recursion
+32      |   GCD
+36      |   binary representation
+40      |   basic math

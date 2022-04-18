@@ -1,4 +1,7 @@
+// problem 30
 // Yes papa
+
+// method: recursion
 #include <stdio.h>
 #include <stdbool.h>
 #include <string.h>

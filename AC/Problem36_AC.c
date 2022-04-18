@@ -1,3 +1,8 @@
+// problem 36
+// binary addition
+
+// method : binary representation
+
 #include <stdio.h>
 #include <stdbool.h>
 
@@ -43,7 +48,7 @@ int BinaryAdd( const int nBinaryA, const int nBinaryB, int *pAdvancedOneBitCount
             nBitAddResult = 0;
         }
 
-        // advance one bit
+        // consider advance one bit + Remainder addition
         if( bAdvancedOneBit ) {
             switch( nBitAddResult ) {
             case 0:
