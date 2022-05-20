@@ -29,7 +29,7 @@ unsigned long long calc( unsigned long long base, unsigned long long nPow, unsig
         return temp;
     }
     else if( nPow <= 0 ) {
-        return 1;
+        return 1 % nMod; // need to mod here, because 1 mod 1 = 0
     }
 
     base %= nMod;
