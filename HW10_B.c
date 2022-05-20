@@ -4,12 +4,19 @@ float x;
 
 int main( void )
 {
-    
-    int* a = ( int* )&x;
-    for( int i = 1; i N(); i*=2 ) {
-        if( a / i ) 
-    }
+    float x = 0.0;
+    while( scanf( "%f", &x ) != EOF ) {
+        int a = *( ( int* )&x );
+        for( int i = 31; i >= 0; i-- ) {
+            if( ( a & ( 1 << i ) ) != 0 ) {
+                printf( "1" );
+            }
+            else {
+                printf( "0" );
+            }
+        }
 
-    printf( "%d", *a );
+        printf( "\n" );
+    }
     return 0;
 }
