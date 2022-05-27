@@ -1,3 +1,5 @@
+// Problem 49
+// Cat-Toast Crisis
 #include <stdio.h>
 
 #define MAX ( 1000 )
