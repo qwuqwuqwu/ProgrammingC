@@ -1,10 +1,11 @@
+// Problem 35
+// Ugandan Knuckles's adventure
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
 
 // #define MAX_N   ( 10 )
 // #define MAX_Len ( 10 )
-
 #define MAX_N   ( 100 )
 #define MAX_Len ( 999 )
 

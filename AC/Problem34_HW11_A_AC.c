@@ -1,3 +1,5 @@
+// Problem 34
+// Ugandan Knuckles's code
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>

@@ -1,3 +1,6 @@
+// Problem 68
+// Uncle Huang Points Tutor
+
 #include <stdio.h>
 #include "math.h"
 
