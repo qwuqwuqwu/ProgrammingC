@@ -1,3 +1,5 @@
+// Problem 69
+// McDonald's fries
 #include <stdio.h>
 #include "string.h"
 #include <stdbool.h>

@@ -1,3 +1,6 @@
+// Problem 46
+// Johnny's sugar
+
 #include <stdio.h>
 #include <string.h>
 #include "stdbool.h"
