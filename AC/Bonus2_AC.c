@@ -1,3 +1,5 @@
+// Bonus 2
+// Guard The Wall
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>

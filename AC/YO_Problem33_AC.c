@@ -1,4 +1,5 @@
 // Problem 33
+// Bonus 1
 // HaSaKi~
 #include<stdio.h>
 #include<string.h>

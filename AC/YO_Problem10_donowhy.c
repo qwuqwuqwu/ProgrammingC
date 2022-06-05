@@ -8,16 +8,17 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
-#ifndef nevikw39
-#pragma GCC optimize("Ofast,unroll-loops,no-stack-protector,fast-math")
-#pragma GCC target("tune=native")
-#pragma comment(linker, "/stack:200000000")
-#else
-#pragma message("hello, nevikw39")
-#endif
-#pragma message("GL; HF!")
+// #ifndef nevikw39
+// #pragma GCC optimize("Ofast,unroll-loops,no-stack-protector,fast-math")
+// #pragma GCC target("tune=native")
+// #pragma comment(linker, "/stack:200000000")
+// #else
+// #pragma message("hello, nevikw39")
+// #endif
+// #pragma message("GL; HF!")
 
-static inline void swap(int *l, int *r) { *l ^= *r ^= *l ^= *r; }
+static inline void swap(int *l, int *r)
+{ *l ^= *r ^= *l ^= *r; }
 
 int find(int *p, int x) { return p[x] != x ? p[x] = find(p, p[x]) : x; }
 
@@ -27,6 +28,7 @@ void unite(int *p, int *g, int *r, int x, int y)
     y = find(p, y);
     if (x == y)
         return;
+        
     --*g;
     if (r[x] < r[y])
         swap(&x, &y);
@@ -55,6 +57,7 @@ int main()
             for (char *ptr = str; *ptr; ptr++)
                 ++arr[i][*ptr - 'a'];
         }
+
         for (int k = 0; k < 26; k++)
             for (int i = 0; i < n; i++)
                 for (int j = 0; j < n; j++)

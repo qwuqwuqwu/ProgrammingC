@@ -10,7 +10,8 @@
         "numeric": "c",
         "ratio": "c",
         "cinttypes": "c",
-        "stdio.h": "c"
+        "stdio.h": "c",
+        "limits.h": "c"
     },
     "C_Cpp.errorSquiggles": "Disabled"
 }

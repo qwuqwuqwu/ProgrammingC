@@ -1,4 +1,5 @@
-// bonus 1
+// Problem 33
+// Bonus 1
 // HaSaKi~
 
 // method: prefix sum

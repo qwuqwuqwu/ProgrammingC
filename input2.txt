@@ -1,0 +1,5 @@
+4
+insert Red 0
+insert Blue 10
+reverse 1 2
+show
