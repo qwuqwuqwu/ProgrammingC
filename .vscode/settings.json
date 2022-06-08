@@ -11,7 +11,8 @@
         "ratio": "c",
         "cinttypes": "c",
         "stdio.h": "c",
-        "limits.h": "c"
+        "limits.h": "c",
+        "string.h": "c"
     },
     "C_Cpp.errorSquiggles": "Disabled"
 }
