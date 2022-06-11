@@ -1,3 +1,6 @@
+// Problem 7
+// Airplane Shooter
+// HW11_C
 #include <stdio.h>
 #include <stdlib.h>
 

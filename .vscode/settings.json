@@ -12,7 +12,8 @@
         "cinttypes": "c",
         "stdio.h": "c",
         "limits.h": "c",
-        "string.h": "c"
+        "string.h": "c",
+        "stdlib.h": "c"
     },
     "C_Cpp.errorSquiggles": "Disabled"
 }

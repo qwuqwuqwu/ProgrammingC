@@ -1,3 +1,5 @@
+// Problem 6
+// Operation on Sequence
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>

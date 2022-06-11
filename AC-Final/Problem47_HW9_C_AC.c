@@ -1,3 +1,6 @@
+// Problem 47
+// youbike racer
+// HW9_C
 #include <stdio.h>
 
 #define MAX ( 100000 )
