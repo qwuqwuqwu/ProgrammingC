@@ -16,6 +16,10 @@ struct Point {
 struct Point g_Points[ MAX ];
 
 int comp( const void *lhs, const void *rhs )
+// compare order
+// 1. admin level: smaller first
+// 2. license number: smaller first
+// 3. index: smaller first
 {
     struct Point LHS = *( struct Point * )lhs;
     struct Point RHS = *( struct Point * )rhs;

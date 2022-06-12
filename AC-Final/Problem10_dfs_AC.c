@@ -1,5 +1,5 @@
 // Problem 10
-// Nyan Cat Crisis
+// knuckle's name
 #include <stdio.h>
 #include <string.h>
 
@@ -12,7 +12,7 @@ int g_nN = 0;
 
 int g_nCount = 0;
 
-int g_arr[ MAX ][ 26 ];
+int g_arr[ MAX ][ 26 ]; // 26 english letters
 
 int connect( int a, int b )
 {
@@ -27,16 +27,21 @@ int connect( int a, int b )
 }
 
 void dfs( int now )
+// recursive dfs
 {
+    // pass visited
     if( visited[ now ] == 1 ) return;
 
+    // visit now
     visited[ now ] = 1;
     g_nCount++;
+
     for( int i = 0; i < g_nN; i++ ) {
         
-        if( i == now ) continue;
-        if( visited[ i ] == 1 ) continue;
+        if( i == now ) continue; // pass same node
+        if( visited[ i ] == 1 ) continue; // pass visited node
 
+        // check unlimited node
         if( connect( now, i ) == 1 ) {
             dfs( i );
         }
@@ -50,7 +55,12 @@ int main( void )
 
     int nK = 0;
     for( int j = 0; j < nT; j++ ) {
+        // initialize global variable for different test cases
         memset( visited, 0, sizeof( int ) * MAX );
+        // remember to clean global variable!
+        for( int i = 0; i < g_nN; i++ ) {
+            memset( g_arr[ i ], 0, sizeof( int ) * 26 );
+        }
 
         scanf( "%d", &g_nN );
         
@@ -81,11 +91,6 @@ int main( void )
         }
 
         printf( "%d\n", group );
-
-        // remember to clean global variable!
-        for( int i = 0; i < g_nN; i++ ) {
-            memset( g_arr[ i ], 0, sizeof( int ) * 26 );
-        }
     }
     
     return 0;

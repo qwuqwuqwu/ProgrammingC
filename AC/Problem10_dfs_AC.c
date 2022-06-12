@@ -1,5 +1,5 @@
 // Problem 10
-// Nyan Cat Crisis
+// knuckle's name
 #include <stdio.h>
 #include <string.h>
 
