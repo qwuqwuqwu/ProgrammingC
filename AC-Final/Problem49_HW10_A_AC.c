@@ -16,6 +16,7 @@ int connect( int a, int b )
 {
     // todo distance
     // do not use sqrt
+    // because floating point will produce error
     if( ( ( x[ a ] - x[ b ] ) * ( x[ a ] - x[ b ] ) + ( y[ a ] - y[ b ] ) * ( y[ a ] - y[ b ] ) ) <= ( g_nR * g_nR ) ) {
         return 1;
     }
@@ -24,16 +25,21 @@ int connect( int a, int b )
 }
 
 void dfs( int now )
+// recursive dfs
 {
+    // pass the visited node
     if( visited[ now ] == 1 ) return;
 
+    // visit now
     visited[ now ] = 1;
     g_nCount++;
+
     for( int i = 0; i < g_nN; i++ ) {
         
-        if( i == now ) continue;
-        if( visited[ i ] == 1 ) continue;
+        if( i == now ) continue; // pass the same node
+        if( visited[ i ] == 1 ) continue; // pass visited node
 
+        // check unvisited note
         if( connect( now, i ) == 1 ) {
             dfs( i );
         }

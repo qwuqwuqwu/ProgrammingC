@@ -10,7 +10,9 @@
 int g_price[ARRAY_SIZE];
 long long int DP[ARRAY_SIZE + 1];
 int helper(long long int product, long long int dollar, long long int buy);
+
 int cmpfunc(const void *a, const void *b)
+// sort from cheaper to more expensive goods
 {
     return (*(int *)a - *(int *)b);
 }
@@ -53,9 +55,11 @@ int helper( long long int product, long long int dollar, long long int buy )
 
         if( i >= buy ) {
             // add buy step before DP
-            // noted that you can copy this pattern endlessly until no item is left
+            // noted that you can copy this pattern to the end of goods
             DP[ i ] += DP[ i - buy ];
         }
+        // before buy step
+        // you can only buy the goods with sum of their price
         else {
             DP[ i ] += DP[ i - 1 ];
         }

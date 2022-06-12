@@ -25,6 +25,7 @@ int main( void )
     int nLastIdx = 0;
 
     if( nN == 1 ) {
+        // success
         if( g_Check[ 0 ] <= nK ) {
             printf( "0\n" );
         }
@@ -34,28 +35,38 @@ int main( void )
         return 0;
     }
 
-
-    for( int idx = 0; idx < nN - 1; idx++ ) {
-        unsigned int nDist = g_Check[ idx + 1 ] - g_Check[ idx ];
-        if( nDist > nK ) {
-            printf( "The Legend Falls.\n" );
-            return 0;
-        }
-
+    // check index 0 ~ nN - 2
+    for( int idx = 0; idx <= nN - 2; idx++ ) {
         // recharge
-        if( g_Check[ idx ] > nDeadIdx && idx >= 1 ) {
+        if( g_Check[ idx ] > nDeadIdx ) {
             // recharge in last index
             nRechargeCount++;
             nDeadIdx = g_Check[ idx - 1 ] + nK;
         }
-        else if( g_Check[ idx ] == nDeadIdx && idx >= 1 ) {
+        else if( g_Check[ idx ] == nDeadIdx ) {
             nRechargeCount++;
             nDeadIdx = g_Check[ idx ] + nK;
         }
+
+        // check again after recharge
+        // if still not pass, means distance between idx and idx + 1 is too large
+        if( g_Check[ idx ] > nDeadIdx ) {
+            printf( "The Legend Falls.\n" );
+            return 0;
+        }
     }
 
-    if( g_Check[ nN - 1 ] > nDeadIdx ) {
-        nRechargeCount++;
+    // check last index
+    // because g_Check[ nN - 1 ] - g_Check[ nN - 2 ] <= nK
+    // recharge in nN - 2 must success to reach nN - 1
+    if( g_Check[ nN - 1 ] - g_Check[ nN - 2 ] <= nK ) {
+        if( g_Check[ nN - 1 ] > nDeadIdx ) {
+            nRechargeCount++;
+        }
+    }
+    else {
+        printf( "The Legend Falls.\n" );
+        return 0;   
     }
 
     printf( "%d\n", nRechargeCount );
