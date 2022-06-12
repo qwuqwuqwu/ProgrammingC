@@ -16,7 +16,7 @@ void helper( const int nA, const int nB, const int nC, const int nD )
 // len of first + len of second should > len of third
 {
     // initialize global array
-    memset( g_k, 0, sizeof( int ) * ( MAX + MAX + 1 ) ); // be careful!
+    memset( g_k, 0, sizeof( int ) * ( MAX + MAX + 1 ) ); // be careful! MAX + MAX + 1
     memset( g_a, 0, sizeof( int ) * ( MAX + MAX + 1 ) );
     
     // find a_xy( i )

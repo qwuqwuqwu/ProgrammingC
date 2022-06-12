@@ -9,7 +9,7 @@
             "type": "cppdbg",
             "request": "launch",
             "program": "${fileDirname}/${fileBasenameNoExtension}.out",
-            "args": [ "<", "input.txt", ">", "output.txt" ],
+            //"args": [ "<", "input.txt", ">", "output.txt" ],
             "stopAtEntry": false,
             "cwd": "${fileDirname}",
             "environment": [],
