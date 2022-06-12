@@ -18,5 +18,5 @@ int main( void ) {
     mul /= Base;
     printf( "%.*lf\n", z, mul );
     
-    return 0;
+    return 0;/*  */
 }

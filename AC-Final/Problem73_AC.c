@@ -14,6 +14,8 @@ typedef struct _Vx {
 } Vx;
 
 const Tx g_Tx = { 1, 1, 1, 0 };
+// 1 1
+// 1 0
 
 Tx Identity( void ) {
     Tx Ans;

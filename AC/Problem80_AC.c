@@ -25,30 +25,6 @@ Factory g_F[ MAX ];
 Pro g_A[ MAX ];
 Pro g_B[ MAX ];
 
-int CompPro( const void *plhs, const void *prhs )
-{
-    Pro *pLHS = ( Pro * )plhs;
-    Pro *pRHS = ( Pro * )prhs;
-
-    if( pLHS->nProfit > pRHS->nProfit ) {
-        return -1;
-    }
-    else if( pLHS->nProfit < pRHS->nProfit ) {
-        return 1;
-    }
-    // same profit, them compare string order
-    else {
-        if( strcmp( pLHS->cName, pRHS->cName ) > 0 ) {
-            return -1;
-        }
-        else if( strcmp( pLHS->cName, pRHS->cName ) < 0 ) {
-            return 1;
-        }
-
-        return 0;
-    }
-}
-
 int CompName( const void *plhs, const void *prhs )
 // B from small to big
 {
@@ -115,6 +91,8 @@ int main( void )
     // pick k
     int nMaxProfit = 0;
     int nRecordK = 0;
+    // use k diff larger as A
+    // pick number x of A
     for( int k = 1; k < g_nN; k++ ) {
         // sort all n ( reset )
         qsort( g_F, g_nN, sizeof( Factory ), CompDiff );
