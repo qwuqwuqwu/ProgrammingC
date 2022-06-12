@@ -35,22 +35,28 @@ int connect( int a, int b )
 }
 
 bool dfs( int now, EColor color )
+// recursive dfs
 {
+    // if it is visited, check its color
     if( visited[ now ] == 1 ) {
         if( g_Color[ now ] != color ) {
             return false;
         }
     }
 
+    // visit it
     visited[ now ] = 1;
     g_Color[ now ] = color;
     g_nCount++;
+
+    // dfs next level, so change color
     color = ( color + 1 ) % EC_Num;
     for( int i = 1; i <= g_nN; i++ ) {
         
-        if( i == now ) continue;
+        if( i == now ) continue; // pass some node
 
         if( connect( now, i ) == 1 ) {
+            // if new node is visited, check its color
             if( visited[ i ] == 1 ) {
                 if( g_Color[ i ] != color ) {
                     return false;
@@ -94,6 +100,7 @@ int main( void )
         }
 
         // it is a connected graph
+        // so only need to dfs from one start node
         bool bResult = false;
         bResult = dfs( 1, EC_Red );
         if( bResult == true ) {

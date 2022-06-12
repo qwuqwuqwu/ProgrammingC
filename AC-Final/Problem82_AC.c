@@ -22,9 +22,13 @@ long long det( long long M[][ MAX ], int nSize )
     long long N[ MAX ][ MAX ];
     for( int i = 0; i < nSize; i++ ) {
         // prepare N
+        // N is local matrix of size - 1
+
+        // j is the row entry of matrix M
         for( int j = 1; j < nSize; j++ ) {
             int l = 0;
             for( int k = 0; k < nSize; k++ ) {
+                // pass same column of i
                 if( k == i ) {
                     continue;
                 }
@@ -33,7 +37,7 @@ long long det( long long M[][ MAX ], int nSize )
         }
 
         // 
-        temp2 = M[ 0 ][ i ] * det( N, nSize - 1  );
+        temp2 = M[ 0 ][ i ] * det( N, nSize - 1 );
 
         // negative
         if( i % 2 == 1 ) {
