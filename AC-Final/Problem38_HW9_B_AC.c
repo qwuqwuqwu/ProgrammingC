@@ -17,6 +17,7 @@ int main( void )
     bool bHa = false;
     while( ( cChar = getchar() ) != EOF ) {
         nIdx = (int)( cChar - 'a' );
+        // if there are two same letters in knuckles, you can make all knuckles to be the same
         if( bHit[ nIdx ] == true ) {
             bHa = true;
             break;

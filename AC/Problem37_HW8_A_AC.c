@@ -1,5 +1,5 @@
-// AAAAAAAAAAAA~
 // Problem 37
+// AAAAAAAAAAAA~
 #include <stdio.h>
 
 #define MAX ( 200 )

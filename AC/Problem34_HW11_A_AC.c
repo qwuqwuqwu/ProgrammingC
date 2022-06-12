@@ -36,16 +36,11 @@ int main( void )
     qsort( g_c, nN, sizeof( char ) * 1001, comp );
 
     // check substring
+    // check if i is substring of i + 1
     bool bNo = false;
-    for( int i = 0; i <= nN - 2; i++ ) {
-        for( int j = i + 1; j <= nN - 1; j++ ) {
-            if( strstr( g_c[ j ], g_c[ i ] ) == NULL ) {
-                bNo = true;
-                break;
-            }
-        }
-
-        if( bNo == true ) {
+    for( int i = 0; i < nN - 1; i++ ) {
+        if( strstr( g_c[ i + 1 ], g_c[ i ] ) == NULL ) {
+            bNo = true;
             break;
         }
     }

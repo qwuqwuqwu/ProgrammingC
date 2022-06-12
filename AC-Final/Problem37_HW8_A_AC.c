@@ -1,14 +1,14 @@
-// AAAAAAAAAAAA~
 // Problem 37
+// AAAAAAAAAAAA~
 #include <stdio.h>
 
-#define MAX ( 200 )
-// #define MAX ( 2000000 )
+// #define MAX ( 200 )
+#define MAX ( 2000000 )
 
 int g_B[ MAX + 1 ];
 
 // This arr contains n numbers and start from index 0
-// q is the query number which you nned to find the index
+// q is the query number which you need to find the index
 // n is the length of arr
 int BS(int* arr, int q, int n)
 {
