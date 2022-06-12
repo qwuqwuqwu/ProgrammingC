@@ -16,32 +16,32 @@ int BinarySearch( long long *pArr, int nStartIdx, int nEndIdx, long long nTarget
         return -1;
     }
     else if( nEndIdx == nStartIdx ) {
+        // if f <= pArr[ only one index ]
+        // return onely one index
         if( nTarget <= pArr[ nStartIdx ] ) {
             return nStartIdx;
         }
         else {
-            return nStartIdx + 1;
+            return -1;
         }
     }
 
     int nMidIdx = nStartIdx + ( ( nEndIdx - nStartIdx ) / 2 );
+    // find before
     if( nTarget < pArr[ nMidIdx ] ) {
-        int nTemp = BinarySearch( pArr, nStartIdx, nMidIdx - 1, nTarget );
-        if( nTemp == -1 ) {
-            return nMidIdx;
-        }
-        else {
-            return nTemp;
-        }
+        // because f can be <= ai
+        // pArr[ nMidIdx ] may be picked to be the answer
+        // if pArr[ nMidIdx ] is the closest value among pArr[ nStartIdx ~ nMidIdx ]
+        int nTemp = BinarySearch( pArr, nStartIdx, nMidIdx, nTarget );
+        return nTemp;
     }
-    else if( nTarget > pArr[ nMidIdx ] ){
+    // find after
+    else if( nTarget > pArr[ nMidIdx ] ) {
+        // because f cannot be > ai
+        // pArr[ nMidIdx ] has no change to be the answer
+        // so use general form of BS, search from nMidIdx + 1 to nEndIdx
         int nTemp = BinarySearch( pArr, nMidIdx + 1, nEndIdx, nTarget );
-        if( nTemp == -1 ) {
-            return nMidIdx + 1;
-        }
-        else {
-            return nTemp;
-        }
+        return nTemp;
     }
     else {
         return nMidIdx;
@@ -73,6 +73,7 @@ int main( void )
         // search in first segment
         int a = BinarySearch( g_nA, 0, ( nN - nK - 1 ), nF );
 
+        // exceed index of 0 ~ nN - nK - 1
         if( a < 0 || a > ( nN - nK - 1 ) ) {
             bA = false;
         }
@@ -80,6 +81,7 @@ int main( void )
         // search in second segment
         int b = BinarySearch( g_nA, nN - nK, nN - 1, nF );
 
+        // exceed index of nN - nK ~ nN - 1
         if( b < ( nN - nK ) || b > ( nN - 1 ) ) {
             bB = false;
         }

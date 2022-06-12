@@ -149,6 +149,8 @@ bool take_a_step( int x, int y, int *ax, int *ay )
 // false: cannot
 {
     if( dir_now == NORTH ) {
+        // before check wall, hill
+        // check the range
         if( center_x > 2 ) {
             /// Detect wall first
             if( detect_wall( x, y ) == true ) {

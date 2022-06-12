@@ -47,10 +47,14 @@ int connect( int nowRow, int nowCol, int testRow, int testCol )
 }
 
 void dfs( int nowRow, int nowCol )
+// recursive dfs
 {
+    // pass visited node
     if( visited[ nowRow ][ nowCol ] == 1 ) return;
 
+    // visit it!
     visited[ nowRow ][ nowCol ] = 1;
+
     // if now is pond, dfs neighborhood
     if( g_bPond[ nowRow ][ nowCol ] == true ) {
         g_nCount++;
@@ -58,7 +62,7 @@ void dfs( int nowRow, int nowCol )
         // only dfs the neighborhood
         for( int i = nowRow - 1; i <= nowRow + 1; i++ ) {
             for( int j = nowCol - 1; j <= nowCol + 1; j++ ) {
-                if( i == nowRow && j == nowCol ) continue;
+                if( i == nowRow && j == nowCol ) continue; // pass itself
                 if( i < 0 || i >= g_nRow ) continue; // clamp idx
                 if( j < 0 || j >= g_nCol ) continue; // clamp idx
                 if( visited[ i ][ j ] == 1 ) continue; // if neighborhoood is visited, do not check again
